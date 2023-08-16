@@ -1,10 +1,11 @@
+import Sidebar from '@/components/Sidebar'
 import './globals.css'
-import type { Metadata } from 'next'
+
 import { Figtree } from 'next/font/google'
 
 const font = Figtree({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Spotify Clone',
   description: '¡Listen to Music!',
 }
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        {children}
+        <Sidebar>
+          {children}
+        </Sidebar>
       </body>
     </html>
   )
